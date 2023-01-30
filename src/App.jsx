@@ -1,32 +1,32 @@
+import { AppBar, Button, Card, Toolbar, Typography } from '@mui/material'
+import { Stack } from '@mui/system'
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import './App.css'
+import Content from './components/Content'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const downloadCV = () => {
+    window.location.assign('http://localhost:5173/CV.pdf')
+  }
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div>
+      <AppBar position='static'>
+        <Toolbar>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Rafee's Website
+          </Typography>
+          <Button onClick={downloadCV} color='inherit'>Download my CV</Button>
+        </Toolbar>
+      </AppBar>
+
+      <Stack direction={'row'} justifyContent="center" spacing={12} padding={4}>
+        <Content>This is something I have done.</Content>
+        <Content>This is some other bit of content.</Content>
+        <Content>Subscribe to my youtube channel - @rafeeJ </Content>
+      </Stack>
+
     </div>
   )
 }
