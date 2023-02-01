@@ -3,21 +3,19 @@ import { Stack } from '@mui/system'
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import Content from './components/Content'
+import { downloadCV, visitCV } from './functions'
 
 function App() {
-
-  const downloadCV = () => {
-    window.location.assign('http://localhost:5173/CV.pdf')
-  }
 
   return (
     <div>
       <AppBar position='static'>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Rafee's Website
+            My Website
           </Typography>
           <Button onClick={downloadCV} color='inherit'>Download my CV</Button>
+          <Button onClick={visitCV} color='inherit'>Check out my other CV!</Button>
         </Toolbar>
       </AppBar>
 
